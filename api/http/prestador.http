@@ -1,0 +1,60 @@
+//Teste de Requisições REST - Prestadores
+//@baseURL = https://backdogwalker.herokuapp.com/api
+@baseURL = https://backendmobile.vercel.app/api
+@id = 6357f3ec5570c95c07a669c5
+@razao = capura
+###
+// GET - Lista todos os prestadores
+GET {{baseURL}}/prestadores
+Content-Type: application/json
+
+###
+// GET - Lista apenas um prestador pelo id
+GET {{baseURL}}/prestadores/id/{{id}}
+Content-Type: application/json
+
+###
+// GET - Lista apenas um prestador pela razão social
+GET {{baseURL}}/prestadores/razao/{{razao}}
+Content-Type: application/json
+
+###
+// POST - Inclui um novo prestador
+POST {{baseURL}}/prestadores
+Content-Type: application/json
+
+{
+   "cnpj": "33719377000158",
+   "razao_social": "ANTONIO SERVIÇOS S/A.",
+   "cnae_fiscal": 7500100,
+   "data_inicio_atividade": "2019-04-30T03:00:00.000Z",
+   "localizacao":{"type":"Point","coordinates":[23.28861,47.31145]}
+}
+
+### 
+// DELETE - Apaga um prestador através do id informado
+DELETE {{baseURL}}/prestadores/{{id}}
+Content-Type: application/json
+
+###
+// PUT - Altera um prestador pelo ID
+PUT {{baseURL}}/prestadores
+Content-Type: application/json
+
+{
+    "_id": "6357f6c95570c95c07a669c7",
+    "cnpj": "33719377000158",
+    "razao_social": "TONINHO SERVIÇOS RÁPIDOS S/A.",
+    "cnae_fiscal": 7500100,
+    "data_inicio_atividade": "2019-04-30T03:00:00.000Z",
+    "localizacao": {
+      "type": "Point",
+      "coordinates": [
+        23.28861,
+        47.31145
+      ]
+    }
+  }
+
+
+
