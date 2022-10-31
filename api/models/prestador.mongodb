@@ -1,4 +1,4 @@
-use('FatecItu')
+use('mobile')
 db.prestadores.insertOne({
     "cnpj":"45150718000142",
     "razao_social":"JOSUÉ ALVES ME",
@@ -14,5 +14,5 @@ db.prestadores.insertOne({
 db.prestadores.createIndex({'cnpj':1}, {unique: true})
 //Criando um GeoIndex no campo localização
 db.prestadores.createIndex({'localizacao': '2dsphere'})
-use('FatecItu')
+use('mobile')
 db.prestadores.find({},{})
